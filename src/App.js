@@ -23,8 +23,10 @@ import {
 } from "./pages";
 import "./App.css";
 
+import { useStateContext } from "./contexts/ContextProvider";
+
 const App = () => {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
   return (
     <div>
       <BrowserRouter>
@@ -46,7 +48,6 @@ const App = () => {
             </div>
           ) : (
             <div className="w-0 dark:bg-secondary-dark-bg">
-              {" "}
               <Sidebar />
             </div>
           )}
